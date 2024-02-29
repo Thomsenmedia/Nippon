@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--meta description-->
+    <meta name="description" content="Vælg mellem forskellige betalingsmuligheder som betalingskort, MobilePay og PayPal for din online bestilling. Gør din shopping let og bekvem med sikre transaktioner. Se din subtotal og samlede pris, og bekræft din ordre med et enkelt klik.">
+    <!--meta description slut-->
+
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/img/nav_icon.png">
+    <title>Betaling | Nippon</title>
+</head>
+<body>  
+
+    <header>
+
+        <div class="topmenu">
+            <a href="/index.html"><img class="logo" src="/img/logo.png" alt="Billede af logo"></a>
+            <div class="menu_links">
+                <nav>
+                    <ul>
+                        <li><a href="/undersider/steps.html">Step by step</a></li>
+                        <li ><a href="/undersider/måltidskasser.html">Måltidskasser</a></li>
+                        <li><a href="/undersider/404.html">Bæredygtighed</a></li>
+                        <li><a href="/undersider/404.html">Om os</a></li>
+                    </ul>
+                </nav>
+                <div class="ikoner">
+                    <img id="cart" src="/img/cart.png" alt="kurv ikon">
+                    <img id="cartWithItems" src="/img/cartWithItems.png" alt="kurv ikon">
+                    <a href="/undersider/404.html"><img src="/img/profile.png" alt="profil ikon"></a>
+                </div>
+            </div>
+        </div>
+
+        <!--Når man trykker på kurven når der er noget i -->
+        <div class="basketWindow">
+            <img id="close_basket" src="/img/x_sort.png" alt="luk kurv knap">
+            <h4>Din kurv</h4>
+
+            <!--1. ting i kurven-->
+            <div class="basket_items">
+                <img src="/img/top3_1.jpg" alt="Nudelret">
+                <div class="items_info">
+                    <h6>Vegetarisk Nudelret</h6>
+                    <div class="price_basket">
+                        <p id="portion">Pr. portion:</p>
+                        <p>32 kr</p>
+                    </div>
+                    <div class="counter counter_basket">
+                        <span class="down down_basket" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up up_basket"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--2. ting i kurven-->
+            <div class="basket_items">
+                <img src="/img/luksus_ramen.jpg" alt="Nudelret">
+                <div class="items_info">
+                    <h6>Luksus Ramen</h6>
+                    <div class="price_basket">
+                        <p id="portion">Pr. portion:</p>
+                        <p>40 kr</p>
+                    </div>
+                    <div class="counter counter_basket">
+                        <span class="down down_basket" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up up_basket"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="total">
+                <h3>total</h3>
+                <h3>0,00 kr.</h3>
+            </div>
+
+            <a class="button_cart" href="/undersider/kurv.html"><h5>til kassen</h5></a>
+
+        </div>
+
+        <img id="open_menu" src="/img/bm_sort.png" alt="menu knap">
+        <img id="close_menu" src="/img/x_sort.png" alt="luk menu knap">
+
+        <nav id="burger_menu">
+            <ul>
+                <li><a class="bm_links" href="/undersider/steps.html">Step by step</a></li>
+                <li><a class="bm_links" href="/undersider/måltidskasser.html">Måltidskasser</a></li>
+                <li><a class="bm_links" href="/undersider/404.html">Bæredygtighed</a></li>
+                <li><a class="bm_links" href="/undersider/404.html">Om os</a></li>
+            </ul>
+
+            <div class="bm_ikoner">
+
+                <h5>SoMe</h5>
+                <div class="bm_some">
+                    <a href=""><img src="/img/instagram.png" alt="telefon ikon"></a>
+                    <a href=""><img src="/img/facebook.png" alt="mail ikon"></a>
+                </div>
+
+                <h5>Kontakt os</h5>
+                <div class="bm_contact">
+                    <a href=""><img src="/img/phone.png" alt="telefon ikon"></a>
+                    <a href=""><img src="/img/mail.png" alt="mail ikon"></a>
+                    <a href=""><img src="/img/location.png" alt="loakation ikon"></a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1 class="first_h1">Betaling</h1>
+
+        <div class="container_overview">
+            <!--1-->
+            <a href="/undersider/kurv.html"><img src="/img/cirkel_fyldt.png" alt="fyldt cirkel"></a>
+            <hr>
+            <!--2-->
+            <a href="/undersider/levering.html"><img src="/img/cirkel_fyldt.png" alt="fyldt cirkel"></a>
+            <hr>
+            <!--3-->
+            <a href=""><img src="/img/cirkel_fyldt.png" alt="progress cirkel"></a>
+            <hr>
+            <!--4-->
+            <img src="/img/cirkel.png" alt="progress cirkel">
+        </div>
+
+
+        <div class="container_order">
+            <div class="container_items">
+                <h3 class="h3_delivery h3_payment">Betalingsmuligheder</h3>
+
+                <hr class="line_payment">
+
+                <div class="option_box payment">
+                    <img src="/img/cirkel_fyldt.png" alt="fyldt cirkel">
+                    <div>
+                        <h3 class="h3_delivery h3_payment">Betalingskort</h3>
+                        <a class="faq_button payment_btn" href="">tilføj kort</a>
+                    </div>
+                </div>    
+
+                <hr class="line_payment">
+
+                <div class="option_box payment">
+                    <img src="/img/cirkel.png" alt="fyldt cirkel">
+                    <div>
+                        <h3 class="h3_delivery h3_payment">Mobilepay</h3>
+                    </div>
+                </div>    
+
+                <hr class="line_payment">
+                
+                <div class="option_box payment">
+                    <img src="/img/cirkel.png" alt="fyldt cirkel">
+                    <div>
+                        <h3 class="h3_delivery h3_payment">Paypal</h3>
+                    </div>
+                </div>    
+
+                <hr class="line_payment">
+            </div>
+
+            <!--Total-->
+            <div class="container_totalOrder no_btn">
+                <h4>din ordre</h4>
+                <div  class="totalOrder_price">
+                    <h6>subtotal</h6>
+                    <h6>272,00 kr.</h6>
+                </div>
+                <div  class="totalOrder_price">
+                    <h6>levering</h6>
+                    <h6>30,00 kr.</h6>
+                </div>
+                <hr>
+                <div  class="totalOrder_price">
+                    <h5>pris i alt</h6>
+                    <h5>302,00 kr.</h5>
+                </div>
+            </div>
+        </div>
+
+        <a class="button_cart button_cart_site payment_btn_red" href="/undersider/ordrebekræftelse.html"><h5>køb nu</h5></a>
+
+
+
+    </main>
+
+    <footer>
+        <div>
+            <h3>Nippon A/S</h3>
+
+            <a target="_blank" href="tel:12345678"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/phone.png" alt="telefon ikon">
+                <p>12 34 56 78</p>
+            </div></a>
+
+            <a target="_blank" href="mailto:kontakt@nippon.dk"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/mail.png" alt="mail ikon">
+                <p>kontakt@nippon.dk</p>
+            </div></a>
+
+            <a target="_blank" href="https://www.google.com/maps/place/Aarhus/@56.1781721,10.0995741,12z/data=!3m1!4b1!4m6!3m5!1s0x464c4cb15397788b:0x8c4dd7d9912ea2af!8m2!3d56.162939!4d10.203921!16zL20vMGx6cA?entry=ttu"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/location.png" alt="Lokation ikon">
+                <p>Nipponvej 45 
+                    <br>8000 Aarhus C</p>
+            </div></a>
+
+        </div>
+
+        <div class="footer_center_content">
+            <img src="/img/rising_sun.svg" alt="Halv cirkel">
+            <div class="footer_logo"><a href="/index.html"><img src="/img/logo.png" alt="Nippon logo"></a></div>
+          </div>
+    
+        <div>
+            <h3>SoMe</h3>
+
+            <a target="_blank" href="https://www.instagram.com/"><div class="footer_content">
+                <img class="some_ikoner" src="/img/instagram.png" alt="instagram ikon">
+                <p>Instagram</p>
+            </div></a>
+
+            <a target="_blank" href="https://www.facebook.com/"><div class="footer_content">
+                <img class="some_ikoner" src="/img/facebook.png" alt="facebook ikon">
+                <p>Facebook</p>
+            </div></a>
+
+        </div>
+
+    </footer>
+</body>
+</html>

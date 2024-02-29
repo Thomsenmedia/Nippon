@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--meta description-->
+    <meta name="description" content="Opdag en verden af japanske måltidskasser på vores hjemmeside. Ugentlige top 3 retter inkluderer vegetariske nudelretter og kødfulde gyudon. Udforsk også lækre fiskeopskrifter som sushi med laks og tun. Find din perfekte måltidskasse i dag!">
+    <!--meta description slut-->
+
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/img/nav_icon.png">
+    <title>Måltidskasser | Nippon</title>
+</head>
+<body>  
+
+    <header>
+
+        <div class="topmenu">
+            <a href="/index.html"><img class="logo" src="/img/logo.png" alt="Billede af logo"></a>
+            <div class="menu_links">
+                <nav>
+                    <ul>
+                        <li><a href="/undersider/steps.html">Step by step</a></li>
+                        <li><a id="active" href="/undersider/måltidskasser.html">Måltidskasser</a></li>
+                        <li><a href="/undersider/404.html">Bæredygtighed</a></li>
+                        <li><a href="/undersider/404.html">Om os</a></li>
+                    </ul>
+                </nav>
+                <div class="ikoner">
+                    <img id="cart" src="/img/cart.png" alt="kurv ikon">
+                    <img id="cartWithItems" src="/img/cartWithItems.png" alt="kurv ikon">
+                    <a href="/undersider/404.html"><img src="/img/profile.png" alt="profil ikon"></a>
+                </div>
+            </div>
+        </div>
+
+        <!--Når man trykker på kurven når der er noget i -->
+        <div class="basketWindow">
+            <img id="close_basket" src="/img/x_sort.png" alt="luk kurv knap">
+            <h4>Din kurv</h4>
+
+            <!--1. ting i kurven-->
+            <div class="basket_items">
+                <img src="/img/top3_1.jpg" alt="Nudelret">
+                <div class="items_info">
+                    <h6>Vegetarisk Nudelret</h6>
+                    <div class="price_basket">
+                        <p id="portion">Pr. portion:</p>
+                        <p>32 kr</p>
+                    </div>
+                    <div class="counter counter_basket">
+                        <span class="down down_basket" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="2">
+                        <span class="up up_basket"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--2. ting i kurven-->
+            <div class="basket_items">
+                <img src="/img/luksus_ramen.jpg" alt="Nudelret">
+                <div class="items_info">
+                    <h6>Luksus Ramen</h6>
+                    <div class="price_basket">
+                        <p id="portion">Pr. portion:</p>
+                        <p>40 kr</p>
+                    </div>
+                    <div class="counter counter_basket">
+                        <span class="down down_basket" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="4">
+                        <span class="up up_basket"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="total">
+                <h3>total</h3>
+                <h3>224,00 kr.</h3>
+            </div>
+
+            <a class="button_cart" href="/undersider/kurv.html"><h5>til kassen</h5></a>
+
+        </div>
+
+        <img id="open_menu" src="/img/bm_sort.png" alt="menu knap">
+        <img id="close_menu" src="/img/x_sort.png" alt="luk menu knap">
+
+        <nav id="burger_menu">
+            <ul>
+                <li><a class="bm_links" href="/undersider/steps.html">Step by step</a></li>
+                <li><a id="active_bm" href="/undersider/måltidskasser.html">Måltidskasser</a></li>
+                <li><a class="bm_links" href="/undersider/404.html">Bæredygtighed</a></li>
+                <li><a class="bm_links" href="/undersider/404.html">Om os</a></li>
+            </ul>
+
+            <div class="bm_ikoner">
+
+                <h5>SoMe</h5>
+                <div class="bm_some">
+                    <a href=""><img src="/img/instagram.png" alt="telefon ikon"></a>
+                    <a href=""><img src="/img/facebook.png" alt="mail ikon"></a>
+                </div>
+
+                <h5>Kontakt os</h5>
+                <div class="bm_contact">
+                    <a href=""><img src="/img/phone.png" alt="telefon ikon"></a>
+                    <a href=""><img src="/img/mail.png" alt="mail ikon"></a>
+                    <a href=""><img src="/img/location.png" alt="loakation ikon"></a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1 class="first_h1">måltidskasser</h1>
+
+<!--kategori sektion-->
+        <div class="container_choose_category">
+            <a href="/undersider/familie.html"><div>Familie</div></a>
+            <a href="/undersider/nemtoghurtigt.html"><div>Nemt og hurtigt</div></a>
+            <a href="/undersider/luksus.html"><div>Luksus</div></a>
+        </div>
+
+
+
+<!--top 3 sektion-->
+        <h2 id="phone">ugens top 3</h2>
+        <div class="container_top3">
+            <!--top3 1-->
+            <div class="foodbox">
+                <div class="foodbox_img_container">
+                    <img src="/img/top3_1.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_nr">1</div>
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Vegetarisk Nudelret</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--top3 2-->
+            <div class="top3_box">
+                <div class="foodbox_img_container">
+                    <img src="/img/top3_2.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_nr"><span id="top3_nr2">2</span></div>
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Chicken terriyaki burger</h4>
+                <p>38 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--top3 3-->
+            <div class="top3_box">
+                <div class="foodbox_img_container">
+                    <img src="/img/top3_3.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_nr">3</div>
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Nudelret</h4>
+                <p>35 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--kød sektion-->
+        <h2>kød</h2>
+
+        <div class="food_scrollbar">
+            <!--1-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_1.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_laktosefri">
+                            <img src="/img/top3_ikonLaktosefri.png" alt="">
+                            <p>Laktosefri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Buta-No-Shogayaki</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--2-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_2.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Gyoza  - Pork Dumplings</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--3-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_3.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>30-40 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Gyudon - Beef Bowl</h4>
+                <p>42 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--4-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_4.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>25-35 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Chicken teriyaki burger</h4>
+                <p>38 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--5-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_5.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 5</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--6-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_6.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 6</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--7-->            
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/kød_7.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 7</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--Vegetar sektion-->
+        <h2>Vegetar</h2>
+
+        <div class="food_scrollbar">
+            <!--1-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_1.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Vegetarisk Nudelret</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--2-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_2.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Edamame</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--3-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_3.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Vegetarisk takoyaki</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--4-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_4.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 4</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--5-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_5.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 5</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--6-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_6.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 6</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+
+            <!--7-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/vegetar_7.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 7</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>            
+
+        </div>
+
+
+
+ <!--Fisk sektion-->
+        <!--Vegetar sektion-->
+        <h2>fisk</h2>
+
+        <div class="food_scrollbar">
+            <!--1-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_1.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Champon</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--2-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_2.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Sushi med laks og tun</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--3-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_3.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Pad Thai med laks & Dumplings</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--4-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_4.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Chirashi sushi bowl med laks</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--5-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_5.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 5</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--6-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_6.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 6</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+            <!--7-->
+            <div class="foodbox_scroll">
+                <div class="foodbox_img_container">
+                    <img src="/img/fisk_7.jpg" alt="Billede af ugens bedste japanske ret">
+                    <div class="foodbox_iconbox_container">
+                        <div id="foodbox_time">
+                            <img src="/img/top3_ikon1.png" alt="">
+                            <p>35-45 min</p>
+                        </div>
+                        <div id="foodbox_gluten">
+                            <img src="/img/top3_ikon2.png" alt="">
+                            <p>Glutenfri</p>
+                        </div>
+                        <div>
+                            <img src="/img/top3_ikon3.png" alt="">
+                            <p>4 dages holdbarhed</p>
+                        </div>
+                    </div>
+                </div>
+                <h4>Ret 7</h4>
+                <p>32 DKK pr. portion</p>
+                <div class="foodbox_buttons_container">
+                    <div class="counter">
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="0">
+                        <span class="up"  onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <div class="foodbox_addToBasket">læg i kurv</div>
+                </div>
+            </div>
+            
+
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <div>
+            <h3>Nippon A/S</h3>
+
+            <a target="_blank" href="tel:12345678"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/phone.png" alt="telefon ikon">
+                <p>12 34 56 78</p>
+            </div></a>
+
+            <a target="_blank" href="mailto:kontakt@nippon.dk"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/mail.png" alt="mail ikon">
+                <p>kontakt@nippon.dk</p>
+            </div></a>
+
+            <a target="_blank" href="https://www.google.com/maps/place/Aarhus/@56.1781721,10.0995741,12z/data=!3m1!4b1!4m6!3m5!1s0x464c4cb15397788b:0x8c4dd7d9912ea2af!8m2!3d56.162939!4d10.203921!16zL20vMGx6cA?entry=ttu"><div class="footer_content">
+                <img class="contact_ikoner" src="/img/location.png" alt="Lokation ikon">
+                <p>Nipponvej 45 
+                    <br>8000 Aarhus C</p>
+            </div></a>
+
+        </div>
+
+        <div class="footer_center_content">
+            <img src="/img/rising_sun.svg" alt="Halv cirkel">
+            <div class="footer_logo"><a href="/index.html"><img src="/img/logo.png" alt="Nippon logo"></a></div>
+          </div>
+    
+        <div>
+            <h3>SoMe</h3>
+
+            <a target="_blank" href="https://www.instagram.com/"><div class="footer_content">
+                <img class="some_ikoner" src="/img/instagram.png" alt="instagram ikon">
+                <p>Instagram</p>
+            </div></a>
+
+            <a target="_blank" href="https://www.facebook.com/"><div class="footer_content">
+                <img class="some_ikoner" src="/img/facebook.png" alt="facebook ikon">
+                <p>Facebook</p>
+            </div></a>
+
+        </div>
+
+    </footer>
+</body>
+</html>
