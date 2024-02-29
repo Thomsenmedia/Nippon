@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/</loc>
+  <lastmod>2024-02-28T09:12:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/index.html</loc>
+  <lastmod>2024-02-28T09:12:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/steps.html</loc>
+  <lastmod>2024-02-28T11:00:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/m%C3%A5ltidskasser.html</loc>
+  <lastmod>2024-02-28T12:43:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/404.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/familie.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/nemtoghurtigt.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/luksus.html</loc>
+  <lastmod>2024-02-28T12:43:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/kurv.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/levering.html</loc>
+  <lastmod>2024-02-29T08:05:19+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/betaling.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://ux-ui.thomsenmedia.dk/undersider/ordrebekr%C3%A6ftelse.html</loc>
+  <lastmod>2024-02-27T16:14:59+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+
+
+</urlset>

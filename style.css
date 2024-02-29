@@ -1,0 +1,2147 @@
+/* !!! typografi !!! */
+body{
+    font-family: 'montserrat';
+}
+h1{
+    text-transform: uppercase;
+    font-family: 'outfit';
+    text-align: center;
+    font-size: 4vw;
+    width: 65vw;
+    margin: auto;
+    font-weight: 600;
+    line-height: 5vw;
+    letter-spacing: 0.2vw;
+}
+/*1. overskrift*/
+.first_h1{
+    padding-top: 13vw;
+}
+
+h2{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    color: #fff;
+    font-weight: 900;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #CD0026;
+    margin: 0 0 2vw 7vw;
+}
+.luksus_h2{
+    margin: 7vw 0 4vw 17vw;
+}
+h3{
+    text-transform: uppercase;
+    font-size: 2.8vw;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+h4{
+    text-transform: uppercase;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+h5{
+    color: white;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    font-family: 'outfit';
+    letter-spacing: 0.1vw;
+}
+h6{
+    color: white;
+    margin: -1vw 0 0;
+    font-size: 1.3vw;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+p{
+    font-size: 1.2vw;
+}
+
+hr{
+    border: 1px solid;
+    margin: 2vw 0;
+}
+
+
+.header_padding{
+    padding-top: 100px;
+}
+
+
+
+
+/* --- --- --- Header --- --- --- */
+
+/* style af menu */
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #FCF0D5;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 400;
+    position: fixed;
+    z-index: 10000;
+}
+
+    /* >topmenu layout */
+    .topmenu{
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* >logo str. */
+    .logo{
+        position: absolute;
+        width: 80px;
+        margin-top: 29px;
+        z-index: 100;
+    }
+    /* pop effekt når man har musen på logoet */
+    .logo:hover{
+        width: 86px;
+        transition: 300ms ease-in-out;
+    }
+
+        /* >>menu content layout */
+        .menu_links{
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        /* >>menu links style */
+        .menu_links ul{
+            list-style-type: none;
+            margin-right: 2vw;
+        }
+        .menu_links ul li{
+            float: left;
+        }
+        /* >>menu links tekst style */
+        .menu_links ul li a{
+            text-decoration: none;
+            color: #5C5C5C;
+            padding: 5px 0;
+            margin: 1.5vw;
+            position: relative;
+        }
+        .menu_links ul li a:hover{
+            color: #000000;
+        }
+        /* >>underline animation under teksten */
+        .menu_links ul li a:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1.5px;
+            background-color: #CD0026;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s linear;
+        }
+        .menu_links ul li a:hover:after{
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+        
+        /* gør at menupunktet er aktiv på den side man er på */ 
+        #active{
+            color: #000000;
+            border-bottom: 1.5px solid #CD0026;
+        }
+        #active:hover:after{
+            transform-origin: none;
+            transform: scaleX(0);
+        }
+
+            /* >>>ikoner layout */
+            .ikoner{
+                width: 79px;
+                height: 29px;
+                display: flex; 
+                justify-content: space-between; 
+            }
+            /* >>>ikoner str. */
+            .ikoner img{
+                width: 29px;
+                margin-top: 0px;
+                cursor: pointer;
+            }
+            #cartWithItems{
+                display: none;
+                width: 33px;
+                height: 33px;
+            }
+
+/*Burger menu display none*/
+#open_menu{
+    display: none;
+}
+#close_menu{
+    display: none;
+}
+#burger_menu{
+    display: none;
+}
+
+/*pop up kurv*/
+.basketWindow{
+    background-color: #FCF0D5;
+    position: fixed;
+    right: -600px;
+    top: 100px;
+    padding-bottom: 5.8vw;
+
+    /*animation-name:runInBasket;*/
+    animation-duration:0.3s;
+    animation-fill-mode:both;    
+}
+    #close_basket{
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+        width: 2vw;
+        cursor: pointer;
+    }
+    .basketWindow h4{
+        text-transform: none;
+        margin: 3vw 0vw 1vw 2vw;
+        font-family: 'outfit';
+        font-weight: 500;
+        font-size: 2vw;
+    }
+
+    .basket_items{
+        display: flex;
+        padding: 2vw;
+        align-items: center;
+    }
+        .basket_items img{
+            width: 7vw;
+        }
+        .items_info{
+            display: flex;
+            flex-direction: column;
+            margin: 0 3vw 0 1.5vw;
+        }
+            .items_info h6{
+                color: #000000;
+                font-family: 'outfit';
+                margin: 0;
+            }
+            .price_basket{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 1vw;
+                margin: 1vw 0;
+                width: 9vw;
+            }
+            #portion{
+                font-size: 0.8vw;
+            }
+        .total{
+            display: flex;
+            justify-content: space-between;
+            padding: 2vw;
+        }
+            .total h3{
+                color: #000000;
+                font-size: 1.5vw;
+            }
+        .button_cart{
+            text-decoration: none;
+            background-color: #CD0026;
+            padding: 1vw 3vw;
+            border-radius: 50vw;
+            left: 28%;
+            position: absolute;
+            box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;
+        }
+        .button_cart:hover{
+            background-color: #DC4D67;
+            transition: all 0.5s;       
+        }
+
+    @keyframes runInBasket{
+        from{right:-600px;}
+        to{right: 0px;}
+    }
+    @keyframes runOutBasket{
+        from{right:0px;}
+        to{right: -600px;}
+    }
+
+        
+
+
+
+
+
+
+
+
+/* --- --- --- Footer --- --- --- */
+/* footer stuktur */
+footer{
+    height: 14vw;
+    background-color: #FCF0D5;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 4vw 5vw 0 5vw;
+}
+    footer h3{
+        color: #000000;
+        margin-bottom: 1.5vw;
+        text-transform: none;
+        text-align: left;
+    }
+        /*struktur for ikon samt tekst*/
+        .footer_content{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1vw;
+        }
+        /*styling af ikoner til kontakt*/
+        .contact_ikoner{
+            height: 1.4vw;
+            margin-top: 0.2vw;
+        }
+        /*styling af ikoner til some*/
+        .some_ikoner{
+            height: 1.4vw;
+            margin: 0;
+        }
+        /*styling af tekst*/
+        .footer_content p{
+            font-size: 1.3vw;
+            margin: 0 0 0 1vw;
+            line-height: 1.5vw;
+        }
+        /*får space between til at passe, så den ikke tror det er 2 elementer*/
+        .footer_center_content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-self: flex-end;
+            height: 14vw;
+        }
+            /*styling af den røde halvcirkel*/
+            .footer_center_content img{
+                width: 35vw;
+                align-self: flex-end;
+            }
+            /*styling af logoet*/
+            .footer_logo {
+                position: absolute;
+            }
+            .footer_logo img{
+                width: 5vw;
+            }
+
+
+
+
+
+
+
+
+
+/* --- --- --- Forside --- --- --- */
+/* --- --- Main --- --- */
+/* banner struktur */
+.container_banner{
+    height: 34vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    /* bannerbillede style*/
+    .bannier_img{
+        height: 29vw;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        z-index: -2;
+    }
+
+    /* knappen ovenpå bannerbilledet */
+    .button_order{
+        position: absolute;
+        align-self: center;
+        text-decoration: none;
+        background-color: #CD0026;
+        padding: 1.2vw 1.5vw;
+        border-radius: 50vw;
+        margin-top: 3vw;
+    }
+    .button_order:hover{
+        background-color: #DC4D67;
+        transition: all 0.5s;
+    }
+
+    /* style af hele valid containeren */
+    .container_valid{
+        width: 70vw;
+        height: 10vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-self: end;
+        background-color: #FEF9EE;
+        align-items: center;
+    }
+        /* struktur af de tre bokse i validcontaineren */
+        .container_valid div{
+            width: 20vw;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            /* style af ikonerne i valid containeren */
+            .container_valid div img{
+                height: 4.5vw;
+                margin: 0 5vw 1vh;
+            }
+            /* trustpilot link styling */
+            #trustpilot{
+                height: 6vw;
+                align-self: center;
+                margin: 0;
+            }
+
+
+
+/* -- -- kategori afsnit -- -- */
+#overskrift_category{
+    margin-top: 6vw;
+}
+
+/* struktur for kategori containeren */
+.container_category{
+    width: 90vw;
+    height: 27vw;
+    margin: 3.5vw auto 6vw;
+    display: flex;
+    justify-content: space-between;
+}
+    /* style og struktur for de 3 bokse */
+    .container_category a{
+        width: 27vw;
+        height: 27vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5D180;
+        text-decoration: none;
+    }
+    .container_category a:hover{
+        background-color: #F7DDA0;
+        transition: all 0.5s ease-in
+    }
+        /* struktur for content i de 3 bokse*/
+        .category_content{
+            width: 90%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4vw;
+        }
+
+            /* dette gør at teksten aligner sig i toppen af kassen */
+            .category_content div{
+                width: 100%;
+                height: 6vw;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                align-self: flex-end;
+                flex-wrap: wrap;
+            }
+
+            /* style af ikonerne */ 
+            .category_content img{
+                height: 8vw;
+                margin: 0 80%;
+            }
+
+
+
+/* struktur for steps containeren */
+.container_steps_frontpage{
+    width: 70vw;
+    margin: 3vw auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    .container_steps_frontpage img{
+        width: 21vw;
+    }
+        .steps_box {
+            position: relative;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .centered h3 {
+            font-size: 100px;
+            font-weight: 800;
+        }
+    .button_steps{
+        display: flex;
+        text-decoration: none;
+        background-color: #CD0026;
+        padding: 1vw 2vw;
+        border-radius: 50vw;
+        margin: 3vw auto 6vw;
+        width: fit-content;
+    }
+    .button_steps:hover{
+        background-color: #DC4D67;
+        transition: all 0.5s;
+    }
+
+/* struktur for hele anmendelses containeren */
+.container_reviews{
+    width: 100%;
+    background-color: #FEF9EE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    padding: 6vw 0 3vw;
+}
+    /*hovedoverskriften*/
+    .container_reviews h1{
+        padding-bottom: 3vw;
+    }
+        /* struktur for boksne til andmendelserne */
+        .scrollmenu_reviews {
+            overflow: auto;
+            white-space: nowrap;
+            padding: 0vw 0vw 3vw 5vw;
+        }
+            /* styling af alle boksene */
+            .scrollmenu_box {
+                display: inline-block;
+                vertical-align: top;
+                background-color: white;
+                width: 21vw;
+                height: 33vw;
+                margin-right: 5vw;
+                border-radius: 5%;
+                box-shadow: 0vw 0.2vw 0.5vw -0.2vw;
+            }
+                /* profilbillede samt navn */
+                .scrollmenu_box div{
+                    width: 38%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0.8vw 0.8vw;
+                }
+                    /* styling profilbillede */
+                    .scrollmenu_box div img{
+                        width: 2.8vw;
+                    }
+                    /* styling navn */
+                    .scrollmenu_box div p{
+                        margin: 0;
+                    }
+                /* styling af madbilled */
+                .scrollmenu_box img{
+                    width: 100%;
+                }
+                /* styling af overskriften i boksne */
+                .scrollmenu_box h6{
+                    color: #000000;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: 0.05vw;
+                    margin: 1vw 1vw 0.6vw;
+                    white-space: normal;
+                }
+                /* styling af teksten i boksne */
+                .scrollmenu_box p{
+                    white-space: normal;
+                    margin: 0vw 1vw 1vw;
+                    line-height: 1.5vw;
+                }
+        
+
+
+
+
+
+
+/* --- --- --- Måltidskasser side 1 --- --- --- */
+/*struktur til kategorierne*/
+.container_choose_category{
+    display: flex;
+    justify-content: space-between;
+    margin: 3vw auto;
+    width: 50vw;
+}
+    /*hver kategori individuelt*/
+    .container_choose_category div{
+        background-color: #FEF9EE;
+        padding: 1.2vw;
+        font-size: 2vw;
+        transition: 0.2s ease-in;
+    }
+    .container_choose_category div:hover{
+        background-color: #E68092;
+    }
+
+    /* til undersiderne de linker til */
+    #active_category{
+        background-color: #E68092;
+    }
+    
+
+
+/*container for hele top 3*/
+.container_top3{
+    display: flex;
+    justify-content: space-between;
+    padding: 0vw 7vw 8vw;
+    font-family: 'outfit';
+}
+    /*struktur for billedet i boxen*/
+    .foodbox_img_container {
+        position: relative;
+    }
+        .foodbox_img_container img{
+            width: 25vw;
+        }  
+        .foodbox_nr {
+            position: absolute;
+            font-size: 2vw;
+            font-weight: 600;
+            top: 2vw;
+            right: 2vw;
+        }
+        #top3_nr2{
+            color: #fff;
+        }
+        .foodbox_iconbox_container {
+            position: absolute;
+            width: 92%;
+            height: 26%;
+            bottom: 1vw;
+            left: 0.8vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+            align-items: end;
+        }
+            .foodbox_iconbox_container div{
+                background-color: rgb(205, 0, 38, 0.5);
+                display: flex;
+                border-radius: 5vw;
+                justify-content: space-around;
+                align-items: center;
+                width: fit-content;
+                padding: 0.6vw;
+            }
+            .foodbox_iconbox_container div p{
+                color: #fff;
+                font-size: 1vw;
+                font-family: 'outfit';
+
+            }
+            .foodbox_iconbox_container div img{
+                width: 1.5vw;
+                padding-right: 0.5vw;
+            }
+                #foodbox_time{
+                    margin-left: 7vw;
+                }
+                #foodbox_gluten{
+                    margin-right:3.7vw;
+                }
+                #foodbox_laktosefri{
+                    margin-right:3.1vw;
+                }
+
+        
+
+    /*style af overskriften i boxen*/
+    .container_top3 h4{
+        margin: 0.7vw 0;
+        text-transform: none;
+    }
+
+    /*knappesektionen*/
+    .foodbox_buttons_container{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1vw auto 0vw;
+    }
+    .counter {
+        width: 7.8vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #F5D180;
+        border-radius: 5vw;
+        box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;
+        color: #fff;
+        font-family: 'outfit';
+        font-size: 1.2vw;
+    }
+    .counter input {
+        width: 1.8vw;
+        border: none;
+        text-align: center;
+        appearance: none;
+        outline: 0;
+        background-color: #F5D180;
+        color: #fff;
+        font-family: 'outfit';
+        font-size: 1.2vw;
+        font-weight: 400;
+    }
+    .counter span {
+        display: block;
+        padding: 0.7vw;
+        cursor: pointer;
+        user-select: none;
+    }
+    .foodbox_addToBasket{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1vw 1.5vw;
+            font-size: 1.2vw;
+            background-color: #CD0026;
+            border-radius: 5vw;
+            box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;
+            cursor: pointer;
+
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .foodbox_addToBasket:hover{
+            background-color: #DC4D67;
+            transition: all 0.5s;    
+        }
+        
+        /* til headeren men skal stå under den anden style for at overskrive */
+        .counter_basket{
+            font-size: 0.9vw;
+            font-weight: 400;
+            color: #000000;
+            background-color: #fff;
+            border-radius: 0vw;
+            border: 1px solid;
+            margin: 0;
+        }
+        .counter_basket input {
+            background-color: #fff;
+            color: #000000;
+            font-size: 0.9vw;
+        }
+        .counter_basket span{
+            padding: 0.7vw 0.9vw;
+        }
+        .down_basket {
+            border-right: 1px solid;
+        }
+        .up_basket{
+            border-left: 1px solid;
+        }
+    
+  
+.food_scrollbar{
+    overflow: auto;
+    white-space: nowrap;
+    padding: 0 0 8vw 7vw;
+}
+.foodbox_scroll{
+    width: 25vw;
+    display: inline-block;
+    margin-right: 5vw;
+}
+    .foodbox_scroll h4{
+        text-transform: none;
+        margin: 0.7vw 0;
+    }
+
+
+
+
+
+
+/* --- --- --- Luksus side --- --- --- */
+.luksusretter_container{
+    width: 66%;
+    height: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+/* --- --- --- Step by step site --- --- --- */
+.container_steps{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    margin: 7vw auto 0;
+}
+    .container_steps h2{
+        margin: 0 0 2vw 0;
+    }
+
+    .container_steps img{
+        width: 18vw;
+    }
+    .container_steps div{
+        display: flex;
+        flex-direction: column;
+        padding-left: 5.5vw;
+        line-height: 1.9vw;
+    }
+    .container_steps div ul{
+        margin: 1vw 0;
+    }
+    .container_steps div ul li{
+        margin-left: 1.2vw;
+        font-weight: 500;
+    }
+
+/* ekstra style til knappen */
+.step_site{
+    margin: 8vw auto 6vw;
+    padding: 1vw 3vw;
+    box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;
+}
+
+
+/*faq*/
+.container_faq{
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw 6vw;
+    background-color: #FEF9EE;
+}
+    .faq_left{
+        display: block;
+    }
+        .faq_left h3{
+            color: #000000;
+            text-transform: none;
+            font-size: 4vw;
+            font-family: 'outfit';
+            font-weight: 600;
+            text-align: left;
+            padding: 2.5vw 0 9vw;
+        }
+
+        .faq_button{
+            display: flex;
+            text-decoration: none;
+            background-color: #F2C256;
+            padding: 1vw 3vw;
+            border-radius: 50vw;
+            width: fit-content; 
+            box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;   
+            margin-top: 1vw;
+            color: #fff;
+        }
+        .faq_button:hover{
+            background-color: #F9E1AA;
+            transition: 0.5s all;
+        }
+    
+
+    .faq_right{
+        display: block;
+    }
+        .faq_right div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50vw;
+            padding: 1vw 1vw;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .faq_right img{
+            width: 2vw;
+            cursor: pointer;
+        }
+        .hr_faq{
+            margin: 1vw 0;
+        }
+
+
+
+
+
+/* --- --- --- Kurv side --- --- --- */
+/*der hvor man ser hvor langt man er kommet*/
+.container_overview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 5vw auto 0vw;
+}
+    .container_overview img{
+        width: 3vw;
+        height: fit-content;
+    }
+    .container_overview hr{
+        width: 10vw;
+    }
+
+/*content på site*/
+.container_order{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 82vw;
+}
+
+
+/*tingende i kurven*/
+.basket_items_site{
+    padding: 0 0 8vw 0vw;
+}
+    .basket_items_site img{
+        width: 17vw;
+    }
+    .items_info_site{
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 5vw;
+        width: 20vw;
+    }
+        .items_info h6{
+            font-size: 2.3vw;
+            font-weight: 300;
+        }
+        .price_basket_site{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1vw;
+            margin: 2vw 0;
+            width: 12vw;
+        }
+        .price_basket_site p{
+            font-size: 1.5vw;
+        }
+
+    #antal{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #antal p{
+        text-transform: uppercase;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    /* alt content i venste side */
+    .container_items{
+        display: block;
+        padding-top: 10vw;
+    }
+        .counter_basket_site{
+            font-size: 2vw;
+            font-weight: 200;
+            margin: 0;
+            width: 10vw;
+        }
+        .counter_basket_site input {
+            background-color: #fff;
+            color: #000000;
+            font-size: 1.5vw;
+            font-weight: 200;
+            padding: 0vw 0.9vw;
+        }
+        .counter_basket_site span{
+            padding: 0.7vw 1.2vw;
+        }
+
+    /* Den sticky boks */
+    .container_totalOrder{
+        display: block;
+        position: sticky;
+        background-color: #FCF0D5;
+        top: 10vw;
+        padding: 3vw;
+        height: 30vw;
+        margin: 10vw 0 8vw;
+    }
+    .container_totalOrder hr{
+        margin: 0;
+        border: 0.5px solid;
+    }
+    .container_totalOrder h4{
+        color: #000000;
+        font-weight: 200;
+        margin-bottom: 5vw;
+        font-size: 2.5vw;
+    }
+        .totalOrder_price{
+            display: flex;
+            justify-content: space-between;
+            width: 23vw;
+            margin: 4vw 0;
+        }
+            .totalOrder_price h6{
+                color: #000000;
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+            .totalOrder_price h5{
+                color: #000000;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+    .button_cart_site{
+        display: flex;
+        justify-content: center;
+        position: static;
+        margin: 4vw auto;
+        padding: 1vw 2vw;
+        width: fit-content;
+    }
+
+
+
+/* --- --- --- Levering side --- --- --- */
+.h3_delivery{
+    color: #000000;
+    text-transform: none;
+    margin-bottom: 5vw;
+    text-align: left;
+    font-size: 2.5vw;
+}
+
+/*til hver inputsituation*/
+.info_container{
+    display: block;
+    margin: 3vw 0 0;
+}
+    .info_container input{
+        padding: 0.8vw;
+        border-radius: 0;
+        border: 0.8px solid;
+        width: 30vw;
+        margin-top: 0.8vw;
+        font-size: 1.2vw;
+        font-family: 'montserrat';
+    }
+
+    .info_postnr{
+        display: flex;
+    }
+        .info_postnr input{
+            width: 10vw;
+            margin-right: 4vw;
+        }
+
+/* sektion med leveringsmuligheder */
+.container_delevery_options{
+    display: block;
+    width: 82vw;
+    margin: 10vw auto;
+}
+    .container_delevery_options hr{
+        margin: 6vw 0;
+    }
+
+.container_options{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6vw;
+}
+    .option_box{
+        display: flex;
+        padding: 1vw;
+        border: 1px solid;
+    }
+        .option_box img{
+            width: 2vw;
+            height: fit-content;
+        }
+        .option_box div{
+            display: block;
+            cursor: pointer;
+        }
+        .option_box div p{
+            margin: 1vw 0 1vw 2vw;
+            line-height: 2%;
+            font-weight: 600;
+        }
+            #tidspunkt_margin{
+                margin-top: 3vw;
+            }
+
+.no_btn{
+    height: 21vw;
+    margin-bottom: 0;
+}
+
+
+
+
+/* --- --- --- Betaling side --- --- --- */
+.payment{
+    border: none; 
+    width: 40vw;
+    padding: 0 0 0 2vw;
+}
+    .payment img{
+        margin-top: 0.3vw;
+    }
+
+.h3_payment{
+    margin: 0 0 2vw 2vw;
+    font-size: 2vw;
+}
+
+.line_payment{
+    margin: 4vw 0;
+}
+
+.payment_btn{
+    text-transform: uppercase;
+    margin: 0 0 0 2vw;
+}
+
+.payment_btn_red{
+    padding: 1vw 4vw;
+    margin: 5vw auto 9vw;
+}
+
+
+
+/* --- --- --- Ordrebekræftelse side --- --- --- */
+/*overskrift*/
+.h3_confirmation{
+    color: #000000;
+    text-align: center;
+    margin-top: 7vw;
+}
+
+/*hovedcontent*/
+.container_confirmation{
+    width: 60vw;
+    margin: 5vw 0 0 7vw;
+}
+    .container_confirmation h4{
+        color: #000000;
+        font-size: 2vw;
+        margin-bottom: 4vw;
+    }
+    .confirmation_large_text{
+        line-height: 1.9vw;
+        font-size: 1.5vw;
+    }
+    .confirmation_small_text{
+        font-size: 1.3vw;
+        line-height: 1.6vw;
+        margin: 3vw 0;
+    }
+    .container_confirmation a{
+        margin: 0 0 2vw;
+    }
+
+
+/* kvitteringen */
+.container_receipt{
+    display: block;
+    width: fit-content;
+    margin-left: 70vw;
+}
+    .receipt_img{
+        width: 20vw;
+        border: 1px solid;
+        cursor: pointer;
+        box-shadow: 0vw 0.2vw 0.3vw -0.2vw #000000;
+    }
+    .container_receipt div{
+        margin: 0 auto 3vw;
+        padding: 1vw 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+
+        text-decoration: underline;
+    }
+    .container_receipt div img{
+        width: 2vw;
+        height: fit-content;
+    }
+
+
+
+/* --- --- --- 404 side --- --- --- */
+.container_404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 13vw 0 0vw;
+}
+    .container_404 img{
+        width: 10vw;
+        height: fit-content;
+    }
+
+
+
+
+/* --- --- Meida query --- --- */
+@media only screen and (max-width: 992px) {
+
+/* justering af tekst */
+h1{
+    font-size: 4vw;
+}
+.first_h1{
+    padding-top: 16vw;
+}
+h2{
+    font-size: 3.8vw;
+}
+.total h3{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.7vw;
+}
+p{
+    font-size: 1.6vw
+}
+.totalOrder_price h6{
+    font-size: 1.6vw;
+}
+.scrollmenu_box p{
+    font-size: 1.2vw;
+}
+
+header{
+    height: 80px;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+.topmenu{
+    justify-content: space-between;
+    width: 50vw;
+}
+.logo{
+    width: 60px;
+    margin-top: 20px;
+}
+.logo:hover{
+    width: 62px;
+}
+
+
+
+/*fjerner desktop menuen*/
+    .menu_links nav{
+        display: none;
+    }
+
+/* --- opretter burgermenuen --- */
+/*styler knapperne*/
+    #open_menu{
+        width: 36px;
+        z-index: 1000;
+        cursor: pointer;
+        position:fixed;
+        right:20px;
+        top:22px;
+        display: block;
+    
+        animation-duration:0.3s;
+        animation-fill-mode:both;
+    }
+    #close_menu{
+        z-index: 1000;
+        cursor: pointer;
+        position:fixed;
+        width: 36px;
+        right:10px;
+        top:22px;
+        display: none;
+    
+        animation-duration:0.3s;
+        animation-fill-mode:both;
+    }
+/* får knappen til at rotere når den bliver aktiveret*/
+    @keyframes spinBm{
+        from{transform: rotate(90deg);}
+        to{transform: rotate(0deg);}
+    }
+    
+/*style af menuen*/
+    #burger_menu{
+        width:220px;
+        height: 80vh;
+        padding-top: 70px;
+        text-decoration:none;
+        font-size: 16px;
+    
+        position:fixed;
+        right:-300px;
+        top: 0px;
+        background-color: #FEF9EE;
+    
+        /*animation-name:runIn;*/
+        animation-duration:0.3s;
+        animation-fill-mode:both;
+    }
+
+    #burger_menu ul{
+        list-style-type: none;
+    }
+
+
+/*style af teksten i menuen*/
+    .bm_links{
+        position: relative;
+        color: #5C5C5C;
+        text-decoration: none;
+        line-height: 50px;
+        padding: 5px 0px;
+        margin-left: 20px;
+        }
+        .bm_links:hover{
+            color: #000000;
+        }
+/*underline animation på teksten*/
+    #burger_menu ul li a:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1.5px;
+        background-color: #CD0026;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s linear;
+    }
+    #burger_menu ul li a:hover:after{
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+
+    #active_bm{
+        color: #000000;
+        border-bottom: 1.5px solid #CD0026;
+        position: relative;
+        text-decoration: none;
+        line-height: 50px;
+        padding: 5px 0px;
+        margin-left: 20px;
+    }
+    #active_bm:hover:after{
+        transform-origin: none;
+        transform: none;
+        transition: none;
+        background-color: #FEF9EE;
+    }
+
+
+    /* footer */
+    footer{
+        padding: 3vw 5vw 0px;
+    }
+    .footer_content p{
+        font-size: 1.5vw;
+        line-height: 1.7vw;
+    }
+    .contact_ikoner{
+        height: 1.8vw;
+    }
+    .some_ikoner{
+        height: 1.8vw;
+    }
+
+
+
+
+    
+
+/*får menuen til at komme ind når den bliver aktiveret*/
+    @keyframes runIn{
+        from{right:-300px;}
+        to{right: 0px;}
+    }
+/*får menuen til at komme ud når den bliver deaktiveret*/
+    @keyframes runOut{
+        from{right:0px;}
+        to{right: -300px;}
+    }
+
+    
+    .bm_ikoner{
+        width: 100%;
+        position: absolute;
+        bottom: 3vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .bm_ikoner img{
+        height: 25px;
+    }
+    .bm_ikoner h5{
+        color: #000000;
+        text-transform: none;
+        font-weight: 300;
+        font-size: 18px;
+        margin: 15px 30px;
+    }
+
+    .h5_bm{
+        color: #000000;
+        text-transform: none;
+        font-weight: 300;
+    }
+    .bm_some{
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .bm_contact{
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    #cart{
+        display: inline;
+    }
+
+/* --- Forside --- */
+    .header_padding{
+        padding-top: 80px;
+    }
+
+    
+/* --- Steps side --- */
+.container_steps{
+    width: 83%;
+    margin: 9vw auto 0;
+}
+    .container_steps img{
+        width: 25vw;
+        height: fit-content;
+    }
+    .container_steps div{
+        line-height: 2.4vw;
+    }
+/* --- Måltidskasse sider --- */
+.foodbox_nr{
+    font-size: 3vw;
+}
+.foodbox_img_container img{
+    width: 26vw;
+}
+.foodbox_addToBasket{
+    font-size: 1.4vw;
+}
+.counter{
+    font-size: 1.6vw;
+}
+.counter input{
+    font-size: 1.6vw;
+    font-weight: 300;
+    width: 2vw;
+}
+.foodbox_buttons_container{
+    width: 85%;
+}
+.luksus_h2{
+    margin: 7vw 0 4vw 13vw;
+}
+.luksusretter_container{
+    width: 73%;
+}
+
+.basketWindow{
+    top: 80px;
+}
+    #close_basket{
+        width: 3vw;
+    }
+    .basket_items img{
+        width: 10vw;
+    }
+    #portion{
+        font-size: 1.1vw;
+    }
+    .price_basket{
+        width: 16vw;
+    }
+    
+
+/* 404 side */
+.container_404{
+    padding-top: 19vw;
+}
+    
+
+/* kurv sider */
+.basket_items_site img{
+    width: 20vw;
+}
+.container_order{
+    width: 87vw;
+}
+    .items_info h6{
+        font-size: 2.9vw;
+    }
+    .price_basket_site{
+        font-size: 1.5vw;
+        margin: 3vw 0;
+    }
+    .price_basket_site p{
+        font-size: 2.2vw;
+    }
+    .counter_basket_site{
+        width: 13vw;
+        font-size: 2.5vw;
+    }
+    .counter_basket_site input{
+        font-size: 2.5vw;
+        width: 3vw;
+    }
+    .counter_basket_site span{
+        padding: 0.7vw 1.4vw;
+        font-size: 2.5vw;
+    }
+
+.container_totalOrder{
+    height: 28vw;
+}
+    .totalOrder_price{
+        width: 28vw;
+        margin: 3vw 0;
+    }
+    .button_cart_site{
+        margin: 4vw auto;
+    }
+
+    .items_info_site{
+        width: 25vw;
+    }
+.no_btn{
+    height: 20vw;
+}
+.info_container p{
+    font-size: 2vw;
+}
+.info_container input{
+    width: 37vw;
+    padding: 1.3vw;
+    font-size: 1.7vw;
+}
+.info_postnr input{
+    width: 15vw;
+}
+.container_delevery_options{
+    width: 87vw;
+}
+
+
+}
+
+
+
+@media only screen and (min-width: 993px) {
+    /*Lappeløsning fordi den går med når jeg ændre displayet i javascript, ved ikke lige hvordan det skulle virke rigtigt*/
+    #open_menu{
+        display: none !important;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    /*tekst*/
+    h1{
+        font-size: 7vw;
+        line-height: 8vw;
+        width: 85vw;
+        margin-top: 10vw;
+    }
+    .first_h1{
+        margin-top: 0;
+        padding-top: 30vw;
+    }
+    h2{
+        font-size: 5.5vw;
+        font-family: 'outfit';
+        color: #CD0026;
+        letter-spacing: 0.5vw;
+        font-weight: 300;
+        margin: 0 0 5vw 7vw;
+    }
+    h3{
+        font-size: 5vw;
+    }
+    h4{
+        font-size: 2vw;
+    }
+    h5{
+        font-size: 3.5vw;
+    }
+    h6{
+        font-size: 3vw;
+        margin-top: 0.6vw;
+    }
+    p{
+        font-size: 3.5vw;
+        line-height: 5vw;
+    }
+
+
+/*Header*/
+.topmenu{
+    width: 53vw;
+}
+
+    .logo{
+        width: 50px;
+        margin-top: 27px;
+    }
+    .ikoner{
+        width: 65px;
+    }
+    .ikoner img{
+        width: auto;
+        height: 23px;
+    }
+
+
+
+/* --- footer --- */
+footer{
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+    footer div{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vw;
+        width: 80vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_content{
+        align-items: center;
+        margin-top: 3vw;
+    }
+    .footer_center_content{
+        order: 3;
+        height: auto;
+        justify-content: end;
+        align-items: center;
+        align-self: auto;
+    }
+    footer h3{
+        font-size: 8vw;
+        margin-bottom: 2.5vw;
+    }
+    .footer_content p{
+        font-size: 3.5vw;
+        line-height: 5vw;
+        margin-left: 2vw;
+    }
+    .contact_ikoner{
+        height: 4.5vw;
+    }
+    .some_ikoner{
+        height: 4.5vw;
+    }
+    .footer_center_content{
+        margin-top: 20vw;
+    }
+    .footer_logo{
+        align-items: center;
+    }
+    .footer_center_content img{
+        width: 50vw;
+        align-self: center;
+    }
+    .footer_logo img{
+        margin-bottom: 6vw;
+        width: 9vw;
+        align-self: center;
+    }
+    
+
+
+
+/* --- forside --- */
+.container_banner{
+    height: 67vw;
+}
+.container_valid{
+    width: 85vw;
+    height: 15vw;
+}
+    .container_valid div{
+        width: 25vw;
+    }
+    #trustpilot{
+        height: 8vw;
+    }
+    .bannier_img{
+        height: 60vw;
+    }
+    .button_order{
+        margin-top: 20vw;
+        padding: 2vw 4vw;
+    }
+.container_valid div img{
+    height: 5.5vw;
+}
+
+.container_category{
+    flex-direction: column;
+    height: 150vw;
+    align-items: center;
+    margin: 6vw auto 8vw;
+}
+    .container_category a {
+        width: 45vw;
+        height: 45vw;
+    }
+    .category_content img{
+        height: 15vw;
+    }
+    .category_content{
+        height: 60%;
+    }
+
+.container_steps_frontpage{
+    flex-direction: column;
+    align-items: center;
+    margin: 0vw auto 0;
+}
+.container_steps_frontpage img{
+    width: 50vw;
+    margin: 5vw 0;
+}
+
+.button_steps{
+    padding: 2vw 5vw;
+}
+
+.container_reviews{
+    padding: 0 0 3vw;
+}
+
+.scrollmenu_box{
+    width: 38vw;
+    height: 63vw;
+}
+    .scrollmenu_box p{
+        font-size: 2.2vw;
+        line-height: 3vw;
+        margin: 0vw 2vw 2vw;
+    }
+    .scrollmenu_box div{
+        width: 45%;
+        margin: 2vw;
+    }
+    .scrollmenu_box h6{
+        margin: 2vw;
+    }
+    .scrollmenu_box div img{
+        width: 5vw;
+    }
+
+
+
+/* --- Step by step side --- */
+.container_steps{
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 85%;
+}
+    .container_steps img{
+        margin-bottom: 10vw;
+        width: 50vw;
+    }
+    .container_steps div{
+        padding-left: 0;
+    }
+    .container_steps h2{
+        margin: 0 0 5vw 0;
+    }
+    .container_steps div ul li{
+        margin-left: 3vw;
+    }
+
+.container_faq{
+    flex-direction: column;
+}
+    .faq_left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .faq_left h3{
+        font-size: 6vw;
+    }
+    .faq_button{
+        font-size: 3.5vw;
+        padding: 2vw 3vw;
+        margin: 2vw 0 5vw;
+    }
+    .faq_right div{
+        width: 95%;
+        padding: 2vw;
+    }
+
+
+
+
+/* --- Måltidskasser side --- */
+.container_choose_category{
+    width: 80vw;
+    margin: 6vw auto;
+}
+    .container_choose_category div{
+        font-size: 3.5vw;
+        padding: 2.5vw;
+    }
+
+.container_top3{
+    flex-direction: column;
+    align-items: center;
+    height: 290vw;
+}
+#phone{
+    text-align: center;
+}
+
+    .foodbox_img_container img{
+        width: 60vw;
+    }
+    .foodbox_nr{
+        font-size: 5vw;
+        top: 3vw;
+        right: 3vw;
+    }
+
+    .foodbox_iconbox_container{
+        width: 96%;
+        bottom: 2vw;
+    }
+    #foodbox_time{
+        margin-left: 25vw;
+    }
+    #foodbox_gluten{
+        margin-right: 5vw;
+    }
+    .foodbox_iconbox_container div{
+        padding: 1vw 1.5vw;
+    }
+    .foodbox_iconbox_container div p{
+        font-size: 2.8vw;
+        line-height: 0vw;
+    }
+    .foodbox_iconbox_container div img{
+        width: 3.5vw;
+        padding-right: 1vw;
+    }
+
+    .container_top3 h4{
+        font-size: 5vw;
+        margin: 3.5vw 0 2.5vw;
+    }
+
+    .counter input{
+        font-size: 3.5vw;
+        width: 4vw;
+    }
+    .counter{
+        font-size: 3.5vw;
+        width: 18vw;
+    }
+    .counter span{
+        padding: 0.8vw 1vw;
+    }
+    
+    .foodbox_addToBasket{
+        font-size: 3.5vw;
+        padding: 1.5vw 2.5vw;
+    }
+    .foodbox_buttons_container{
+        width: 88%;
+        margin: 3vw auto 0vw;
+    }
+
+/*scroll*/
+.foodbox_scroll{
+    width: fit-content;
+    margin: 5vw 5vw 5vw 0vw;
+}
+    .foodbox_scroll h4{
+        font-size: 4vw;
+        width: 55vw;
+    }
+
+/*Luksus*/
+.luksusretter_container{
+    height: fit-content;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+.luksus_h2{
+    margin: 7vw auto 0vw;
+    text-align: center;
+}
+
+/* --- Kurv vindue --- */
+.container_overview{
+    width: 80%;
+}
+.container_overview img{
+    width: 5vw;
+    height: 5vw;
+}
+#close_basket{
+    width: 6vw;
+    top: 3vw;
+    right: 3vw;
+}
+.basketWindow h4{
+    font-size: 5vw;
+    margin: 6vw 0vw 2vw 5vw;
+}
+.basket_items{
+    padding: 3vw 5vw;
+}
+.basket_items img{
+    width: 25vw;
+}
+.price_basket{
+    width: 29vw;
+    margin: 1.7vw 0;
+}
+.items_info{
+    margin: 0 5vw;
+}
+#portion{
+    font-size: 2.5vw;
+}
+.items_info h6{
+    font-size: 4vw;
+}
+.total h3{
+    font-size: 4vw;
+}
+.basketWindow{
+    padding-bottom: 13vw;
+}
+.total{
+    padding: 4vw 3vw;
+}
+.button_cart{
+    padding: 2vw 4vw;
+}
+
+.container_order{
+    flex-direction: column;
+    align-items: center;
+}
+    .container_totalOrder hr{
+        width: 70vw;
+    }
+    .basket_items_site{
+        justify-content: space-around;
+    }
+    .items_info_site{
+        width: 45vw;
+        margin: 0 0 0 5vw;
+    }
+    .price_basket_site p{
+        font-size: 4vw;
+    }
+    .price_basket_site{
+        font-size: 3vw;
+        margin: 2.5vw 0;
+    }
+    .items_info_site h6{
+        font-size: 5vw;
+    }
+    .counter_basket_site span{
+        font-size: 3.5vw;
+        padding: 0.8vw 1.5vw;
+    }
+    .counter_basket_site{
+        width: 16vw;
+    }
+    #antal p{
+        font-size: 3vw;
+    }
+
+
+.container_totalOrder{
+    height: fit-content;
+    padding: 5vw;
+}
+    .totalOrder_price h6{
+        font-size: 3vw;
+    }
+    .container_totalOrder h4{
+        font-size: 5vw;
+        text-align: center;
+        margin: 3vw 0;
+    }
+    .totalOrder_price{
+        width: 50vw;
+        margin: 5vw auto;
+    }
+    .button_cart_site{
+        margin: 6vw auto 4vw;
+    }
+
+
+
+/* Levering side */
+
+.h3_delivery{
+    font-size: 4.5vw;
+    text-align: center;
+}
+.info_container{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+    .info_container p{
+        font-size: 3.5vw;
+        margin: 1vw 0 0.5vw;
+    }
+    .container_items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info_container input{
+        font-size: 3vw;
+        width: 60vw;
+    }
+    .info_postnr input{
+        width: 26vw;
+    }
+    .info_postnr{
+        width: 63vw;
+        justify-content: space-between;
+    }
+
+.container_options{
+    flex-direction: column;
+    align-items: center;
+}
+    .option_box{
+        padding: 4vw;
+        margin: 3vw 0 3vw;
+    }
+    .option_box img{
+        width: 3vw;
+        height: 3vw;
+        margin-top: 1vw;
+    }
+    .option_box div p{
+        line-height: 3.2vw;
+        margin: 1vw 0 1vw 6vw;
+    }
+    .container_delevery_options hr{
+        margin: 7vw 0 9vw;
+    }
+
+
+/* payment */
+.line_payment{
+    width: 85vw;
+    border: 0.7px solid;
+}
+.faq_button{
+    margin: 8vw 0 0vw;
+}
+
+.container_confirmation h4{
+    font-size: 3vw;
+}
+.confirmation_large_text{
+    font-size: 3.5vw;
+    line-height: 4.5vw;
+}
+.confirmation_small_text{
+    font-size: 2.8vw;
+    line-height: 3.5vw;
+    margin: 5vw 0;
+}
+.container_confirmation{
+    width: 80vw;
+}
+.container_receipt div img{
+    width: 4vw;
+    height: 4vw;
+    margin-left: 2vw;
+}
+.receipt_img{
+    width: 27vw;
+}
+}
+
+
+
+
+
+
+
+
